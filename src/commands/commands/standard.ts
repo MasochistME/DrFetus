@@ -47,7 +47,7 @@ export const vid = (msg: Discord.Message): void => {
   const room_vid = cache["options"].find(option => option.option === "room_vid")
     ? cache["options"].find(option => option.option === "room_vid").value
     : null;
-  const channel = cache["bot"].channels.get(room_vid);
+  const channel = cache["bot"].channels.cache.get(room_vid);
 
   if (vid.length === 0) {
     msg.channel.send("You forgot about something, dumbass.");
@@ -84,7 +84,7 @@ export const rec = (msg: Discord.Message): void => {
   const room_rec = cache["options"].find(option => option.option === "room_rec")
     ? cache["options"].find(option => option.option === "room_rec").value
     : null;
-  const channel = cache["bot"].channels.get(room_rec);
+  const channel = cache["bot"].channels.cache.get(room_rec);
 
   if (rec.length === 0) {
     msg.channel.send("You forgot about something, dumbass.");

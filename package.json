@@ -6,7 +6,7 @@
   "scripts": {
     "build": "env NODE_PATH=./src tsc -p .",
     "start": "env NODE_PATH=./src ts-node dist/src/fetus.js",
-    "start-dev": "env NODE_PATH=./src ts-node src/dds.ts",
+    "start-dev": "env NODE_PATH=./src ts-node src/fetus.ts",
     "fetus": "npm run build && npm run start",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint src --ext .jsx,.js,.tsx,.ts --fix --quiet"

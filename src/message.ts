@@ -49,21 +49,21 @@ const answerCommand = (msg: Discord.Message) => {
   msg.react("❔");
 };
 const checkForReactionTriggers = (msg: Discord.Message) => {
-  const appropiateReactions = [];
+  const appropiateReactions: any[] = [];
 
   if (msg.author.id === "431975056919363594") {
     appropiateReactions.push(
-      ...cache.reactions.filter(reaction => reaction.id === "mega"),
+      ...cache["reactions"]?.filter((reaction: any) => reaction.id === "mega"),
     );
   }
   if (isMessageRant(msg)) {
     appropiateReactions.push(
-      ...cache.reactions.filter(reaction => reaction.id === "rant"),
+      ...cache["reactions"]?.filter((reaction: any) => reaction.id === "rant"),
     );
   }
   appropiateReactions.push(
-    ...cache.reactions.filter(
-      reaction =>
+    ...cache["reactions"]?.filter(
+      (reaction: any) =>
         reaction.keywords.filter((keyword: string) =>
           msg.content.toLowerCase().includes(keyword),
         ).length === reaction.keywords.length && reaction.keywords.length > 0,

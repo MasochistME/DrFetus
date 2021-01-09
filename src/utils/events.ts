@@ -7,7 +7,7 @@ const sendLog = (embed: Discord.MessageEmbed) => {
   const room_log = cache["options"].find(option => option.option === "room_log")
     ? cache["options"].find(option => option.option === "room_log").value
     : null;
-  const channel = cache["bot"].channels.get(room_log);
+  const channel = cache["bot"].channels.cache.get(room_log);
   if (channel) {
     channel.send(embed).catch(err => log.WARN(`Something went wrong. ${err}`));
   }

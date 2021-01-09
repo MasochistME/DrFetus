@@ -38,4 +38,4 @@ class BotCache {
   }
 }
 
-export const cache = new BotCache();
+export const cache: any = new BotCache();

@@ -47,7 +47,7 @@ export const informFollowers = (
   )
     ? cache["options"].find(option => option.option === "room_stream").value
     : null;
-  const channel = cache["bot"].channels.get(room_stream);
+  const channel = cache["bot"].channels.cache.get(room_stream);
 
   if (!followers || followers.followers.length === 0) {
     return;
